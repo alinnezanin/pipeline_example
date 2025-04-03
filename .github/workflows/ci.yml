@@ -23,3 +23,7 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest discover tests
+
+    - name: Execute code
+      run: |
+        python src/main.py
