@@ -1,5 +1,6 @@
 name: CI
 
+#será executado toda vez que alguem fizer push ou criar um pull_request
 on: [push, pull_request]
 
 jobs:
@@ -19,7 +20,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-
+ execution:
     - name: Run tests
       run: |
         python -m unittest discover tests
