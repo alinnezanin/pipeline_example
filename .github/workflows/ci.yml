@@ -6,6 +6,7 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
+    steps:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
@@ -21,11 +22,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-     - name: Execute code
-       run: |
-        python src/main.py
-
-     - name: Run tests
-       run: |
+      
+    - name: Run tests
+      run: |
         python -m unittest discover tests
+
+    - name: Execute code
+      run: |
+        python src/main.py
