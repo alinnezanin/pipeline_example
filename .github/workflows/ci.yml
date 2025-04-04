@@ -1,5 +1,6 @@
 name: CI
 
+#será executado toda vez que alguem fizer push ou criar um pull_request
 on: [push, pull_request]
 
 jobs:
@@ -22,10 +23,11 @@ jobs:
   execution:
     runs-on: ubuntu-latest
     steps:
-    - name: Run tests
-      run: |
-        python -m unittest discover -s tests
-    
-    - name: Execute code
-      run: |
+
+     - name: Execute code
+       run: |
         python src/main.py
+
+     - name: Run tests
+       run: |
+        python -m unittest discover tests
